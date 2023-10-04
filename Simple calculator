@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+
+struct calculator {
+    float num1, num2, result;
+    char operation;
+};
+
+int main() {
+    system("cls");
+    calculator calc;
+
+    cout << "Simple Calculator\n\n" << endl;
+
+ while (true) {
+    cout << "Enter the operation (+, -, *, /): ";
+    cin >> calc.operation;
+    cout << "Enter num1 and num2: ";
+    cin >> calc.num1 >> calc.num2;
+
+ switch (calc.operation) {
+   case '+':
+    calc.result = calc.num1 + calc.num2;
+    cout << "Your answer is " << calc.result << endl;
+    break;
+
+ case '-':
+    calc.result = calc.num1 - calc.num2;
+    cout << "Your answer is " << calc.result << endl;
+    break;
+
+ case '*':
+    calc.result = calc.num1 * calc.num2;
+    cout << "Your answer is " << calc.result << endl;
+    break;
+
+ case '/':
+ if (calc.num2 != 0) {
+    calc.result = calc.num1 / calc.num2;
+    cout << "Your answer is " << calc.result << endl;
+  } else {
+    cout << "Division by zero is not allowed." << endl;
+	 }
+    break;
+
+    default:
+    cout << "Invalid operation" << endl;
+    return 0;
+  }
+
+    char cont;
+	cout << "Do you want to continue? (Y/N): ";
+    cin >> cont;
+
+    if (cont != 'Y' && cont != 'y') {
+    cout << "Computed Successfully!!" << endl;
+    break; 
+  }
+    }
+
+    return 0;
+}
